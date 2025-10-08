@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="manual">
+  
+  <!-- Nodes (intersections and points) -->
+  <node id="1" lat="40.7128" lon="-74.0060"/> <!-- Times Square -->
+  <node id="2" lat="40.7589" lon="-73.9851"/> <!-- Central Park South -->
+  <node id="3" lat="40.7831" lon="-73.9712"/> <!-- Upper East Side -->
+  <node id="4" lat="40.7505" lon="-73.9934"/> <!-- Midtown West -->
+  <node id="5" lat="40.7282" lon="-73.9942"/> <!-- Chelsea -->
+  <node id="6" lat="40.7061" lon="-74.0087"/> <!-- SoHo -->
+  <node id="7" lat="40.7411" lon="-73.9897"/> <!-- Herald Square -->
+  <node id="8" lat="40.7648" lon="-73.9808"/> <!-- Lincoln Center -->
+
+  <!-- Ways (streets) -->
+  <way id="101">
+    <nd ref="1"/>
+    <nd ref="7"/>
+    <tag k="highway" v="primary"/>
+    <tag k="name" v="Broadway"/>
+  </way>
+  
+  <way id="102">
+    <nd ref="7"/>
+    <nd ref="2"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="name" v="7th Avenue"/>
+  </way>
+  
+  <way id="103">
+    <nd ref="2"/>
+    <nd ref="3"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="name" v="5th Avenue"/>
+  </way>
+  
+  <way id="104">
+    <nd ref="1"/>
+    <nd ref="4"/>
+    <tag k="highway" v="primary"/>
+    <tag k="name" v="42nd Street"/>
+  </way>
+  
+  <way id="105">
+    <nd ref="4"/>
+    <nd ref="8"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="name" v="8th Avenue"/>
+  </way>
+  
+  <way id="106">
+    <nd ref="1"/>
+    <nd ref="5"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="name" v="6th Avenue"/>
+  </way>
+  
+  <way id="107">
+    <nd ref="5"/>
+    <nd ref="6"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="name" v="Hudson Street"/>
+  </way>
+  
+  <way id="108">
+    <nd ref="7"/>
+    <nd ref="5"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="name" v="34th Street"/>
+  </way>
+
+</osm>

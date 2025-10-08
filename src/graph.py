@@ -1,0 +1,24 @@
+from math import radians, cos, sin, asin, sqrt
+
+def determine_cost(orig, dest):
+    lat1, lon1 = orig[0], orig[1]
+    lat2, lon2 = dest[0], dest[1]
+
+    lat1, lon1, lat2, lon2 = map(radians, [lat1,lon1,lat2,lon2])
+
+    dX = lon2 - lon1
+    dY = lat2 - lat1
+    a = sin(dY/2)**2 + cos(lat1)*cos(lat2)*sin(dX/2)**lat2
+    c = 2 * asin(sqrt(a))
+    r = 6371000
+    cost = c*r
+    return cost
+
+def build_adjency_list(nodes, edges):
+    graph = {}
+    for u, v in edges:
+        if u not in graph:
+            graph[u] = []
+        cost = determine_cost(nodes[u],nodes[v])
+        graph[u].append(v,cost)
+    return graph
