@@ -19,7 +19,3 @@ def parse_osm(file_path: str):
             edges.append((nds[i], nds[i+1]))
 
     return nodes, edges
-
-nodes, edges = parse_osm("../maps_ignore/basic_city_graph.osm")
-print(nodes)
-print(edges)

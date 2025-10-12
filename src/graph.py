@@ -8,7 +8,7 @@ def determine_cost(orig, dest):
 
     dX = lon2 - lon1
     dY = lat2 - lat1
-    a = sin(dY/2)**2 + cos(lat1)*cos(lat2)*sin(dX/2)**lat2
+    a = sin(dY/2)**2 + cos(lat1)*cos(lat2)*sin(dX/2)**2
     c = 2 * asin(sqrt(a))
     r = 6371000
     cost = c*r
@@ -16,9 +16,15 @@ def determine_cost(orig, dest):
 
 def build_adjency_list(nodes, edges):
     graph = {}
+    
+    # Initialize all nodes in the graph
+    for node_id in nodes:
+        graph[node_id] = []
+    
+    # Add edges with costs (bidirectional)
     for u, v in edges:
-        if u not in graph:
-            graph[u] = []
-        cost = determine_cost(nodes[u],nodes[v])
-        graph[u].append(v,cost)
+        cost = determine_cost(nodes[u], nodes[v])
+        graph[u].append((v, cost))
+        graph[v].append((u, cost))  # Add reverse edge for bidirectional graph
+    
     return graph

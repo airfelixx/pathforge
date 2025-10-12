@@ -27,21 +27,14 @@ def dijkstra(graph, start, end):
 
     path = []
     node = end
+    
+    # Check if destination is reachable
+    if distances[end] == float('inf'):
+        return [], float('inf')
+    
     while node is not None:
         path.append(node)
         node = parents[node]
     path.reverse()
 
     return path, distances[end]
-
-graph = {
-    'A': [('B', 2.0), ('C', 5.0)],
-    'B': [('C', 1.0), ('D', 4.0)],
-    'C': [('D', 2.0), ('E', 7.0)],
-    'D': [('E', 1.0)],
-    'E': []
-}
-
-path, cost = dijkstra(graph, 'A', 'E')
-print("Shortest path:", path)
-print("Total cost:", cost)
